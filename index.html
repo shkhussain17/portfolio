@@ -422,6 +422,56 @@
     color: var(--accent2);
   }
 
+  /* EXPERIENCE */
+  .exp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .exp-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 1.5rem;
+    transition: border-color 0.3s;
+  }
+
+  .exp-card:hover { border-color: rgba(0,229,255,0.3); }
+
+  .exp-period {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+
+  .exp-role {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .exp-org {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--accent2);
+    margin-bottom: 0.9rem;
+  }
+
+  .exp-desc {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 640px) {
+    .exp-card { grid-template-columns: 1fr; gap: 0.5rem; }
+  }
+
   /* SKILLS */
   .skills-grid {
     display: grid;
@@ -593,6 +643,7 @@
 <nav>
   <div class="nav-logo">HS // PORTFOLIO</div>
   <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#publications">Papers</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -614,7 +665,7 @@
     </p>
     <div class="hero-stats fade-up fade-up-4">
       <div class="stat">
-        <div class="stat-num">10+</div>
+        <div class="stat-num">15+</div>
         <div class="stat-label">Projects</div>
       </div>
       <div class="stat">
@@ -629,6 +680,35 @@
     <div class="hero-btns fade-up fade-up-5">
       <a href="#projects" class="btn btn-primary">View Projects →</a>
       <a href="https://github.com/shkhussain17" target="_blank" class="btn btn-outline">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">// Where I've worked</div>
+      <h2 class="section-title">Experience</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="exp-list">
+      <div class="exp-card">
+        <div class="exp-period">2026 — Present</div>
+        <div>
+          <div class="exp-role">R&D Hardware Intern</div>
+          <div class="exp-org">SolverTech, Goregaon West</div>
+          <div class="exp-desc">Working on ESP32/STM32 firmware and PCB-level development — from schematic design to embedded firmware for hardware products.</div>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-period">2025 — Present</div>
+        <div>
+          <div class="exp-role">R&D Technical Head</div>
+          <div class="exp-org">SLRTCE</div>
+          <div class="exp-desc">Leading the college's R&D Cell technical initiatives — driving student research, hardware projects, and technical direction.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -742,11 +822,54 @@
         </div>
       </div>
 
+      <div class="project-card">
+        <div class="project-num">11</div>
+        <div class="project-title">Analog Neural Network Monitoring System</div>
+        <p class="project-desc">Pure-analog, microcontroller-free environmental safety system using op-amp "artificial neurons" — comparators, Schmitt triggers & diode logic gates process temperature, humidity, light & gas simultaneously. Landed an international client.</p>
+        <div class="project-tags">
+          <span class="tag">Op-Amp</span><span class="tag">Analog Circuit Design</span><span class="tag">Zero MCU</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">12</div>
+        <div class="project-title">Mine Subsidence Monitoring System (SIH26025)</div>
+        <p class="project-desc">Low-cost, real-time IoT early-warning network for underground coal mines — Ministry of Coal problem statement. Distributed sensor nodes (tilt, vibration, strain, gas) relay threshold-based alerts over HC-12 to an ESP32-C3 gateway with Telegram notifications.</p>
+        <div class="project-tags">
+          <span class="tag">ESP32-C3</span><span class="tag">Arduino Nano</span><span class="tag">HC-12</span><span class="tag">Smart India Hackathon</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">13</div>
+        <div class="project-title">Energy Monitoring PCB</div>
+        <p class="project-desc">Custom KiCad PCB for real-time AC power monitoring — ESP32 DevKit V1 with ZMPT101B voltage & ACS712 current sensing, displayed on an I2C LCD.</p>
+        <div class="project-tags">
+          <span class="tag">KiCad</span><span class="tag">ZMPT101B</span><span class="tag">ACS712</span><span class="tag">PCB Design</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">14</div>
+        <div class="project-title">SenseFlow — Passenger Counting System</div>
+        <p class="project-desc">Non-camera passenger counting system using PIR + ultrasonic sensors, built as a privacy-friendly alternative to vision-based counters.</p>
+        <div class="project-tags">
+          <span class="tag">PIR</span><span class="tag">Ultrasonic</span><span class="tag">IoT</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">15</div>
+        <div class="project-title">JARVIS Circuit Design Mat</div>
+        <p class="project-desc">Raspberry Pi Pico W tap-detection mat that translates physical taps into schematics via TDoA detection — integrates the Claude API for circuit logic and exports directly to KiCad netlists.</p>
+        <div class="project-tags">
+          <span class="tag">Raspberry Pi Pico W</span><span class="tag">Claude API</span><span class="tag">KiCad</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
-
-<!-- PUBLICATIONS -->
 <section id="publications" style="background: rgba(0,229,255,0.02); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
   <div class="container">
     <div class="section-header">
@@ -859,11 +982,6 @@
           <span class="contact-link-icon">IN</span>
           <span class="contact-link-label">LinkedIn</span>
           <span class="contact-link-value">hussain-shaikh-19ab91333</span>
-        </a>
-        <a href="https://instagram.com/shkhussain17" target="_blank" class="contact-link">
-          <span class="contact-link-icon">IG</span>
-          <span class="contact-link-label">Instagram</span>
-          <span class="contact-link-value">@shkhussain17</span>
         </a>
       </div>
     </div>
